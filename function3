@@ -1,0 +1,36 @@
+#!/bin/usr/env python3
+#-*- coding:UTF-8 -*-
+
+def mypower(x,n=2):
+	s=1
+	while(n>0):
+		n=n-1
+		s=s*x
+	return s
+def calc(*numbers,cc=3):
+	sum=0
+	for i in numbers:
+		sum=sum+mypower(i,cc)
+	return sum
+
+def recusive(n):
+	print('this rec',n)	
+	if n==1:
+		return 1
+	return n*recusive(n-1)
+	
+#c=int(input('enter n\n'))
+#k=int(input('enter x\n'))
+#cl=int(input('enter cc\n'))
+#print(recusive(c))	
+
+def move(n, a, b, c):
+    if n == 1:
+        print('move', a, '-->', c)
+    else:
+        move(n-1, a, c, b)
+        move(1, a, b, c)
+        move(n-1, b, a, c)
+
+
+move(4,'j','k','l')        
